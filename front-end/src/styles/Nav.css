@@ -1,0 +1,154 @@
+
+.sidebar-container {
+    width: 300px;
+    height: 100vh;
+    /* background: rgba(255,0,0,0.3); */
+    /* background: rgba(255,0,0,1); */
+    z-index: -1;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
+.top-sidebar {
+    display: flex;
+}
+
+.pfp {
+    width: 80px;
+    border-radius: 50%;
+}
+
+/* .pfp1 {
+    border-radius: 50%;
+} */
+
+.pfp-inactive {
+    width: 80px;
+    position: absolute;
+    left: 20px;
+    z-index: -1;
+    opacity: 14%;
+
+}
+
+.pfp-container {
+    margin-top: 50px;
+}
+
+.blog-name-div {
+    margin-top: 50px;
+    margin-left: 36px;
+}
+
+.blog-name-1 {
+    font-weight: 700;
+    font-size: 26px;
+    margin:0;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.blog-name-2 {
+    font-weight: 400;
+    font-size: 26px;
+    margin:0;
+    padding: 0;
+    margin-top: -8px;
+}
+
+.author-desc-container {
+    margin-top: 16px;
+}
+
+.author-name-div {
+    display: flex;
+}
+
+.author-name {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.switch-div {
+    border-bottom: 1px solid #fff;
+    cursor: pointer;
+    width: 92px;
+    /* margin-top: 4px; */
+}
+
+.switch-div:hover {
+    border-bottom: 1px solid #4d85ff;
+    transition: 0.1s;
+}
+
+.switch-icon {
+    width: 16px;
+    position:absolute;
+    margin-left: 100px;
+}
+
+#switch-path{ 
+    fill: #4d85ff;
+}
+
+.switch-btn {
+    color: #4d85ff;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.author-desc {
+    width: 76%;
+    margin-top: -6px;
+    font-weight: 300;
+    font-size: 16px;
+}
+
+.navbar {
+    margin-top: 30px;
+    width: 160px;
+    background: #fafafa;
+    border: 1px solid #fafafa;
+    border-radius: 8px;
+    padding: 8px 16px;
+    padding-top: 10px;
+    margin-left: -10px;
+}
+
+.nav-link-div {
+    margin-bottom: 8px;
+}
+
+.nav-link {
+    color: #222;
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    border-bottom: 1px solid #fafafa;
+    /* border-bottom: 1px solid #fff; */
+}
+
+.nav-link:hover {
+    border-bottom: 1px solid black;
+    transition: 0.2s;
+}
+
+/* .socials-container {
+    display: flex;
+    margin-bottom: 16px;
+    margin-top: -10px;
+}
+
+.social-icon {
+    width: 16px;
+    margin-right: 10px;
+}
+
+.social-path {
+    fill: #ccc;
+}
+
+.social-path:hover {
+    fill: #888;
+} */
