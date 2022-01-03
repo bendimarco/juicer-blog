@@ -21,12 +21,13 @@ export default function GetInfo() {
         const authorResponse = await axios.get(
           `https://juicer-blogs.herokuapp.com/api/creators/1?populate=%2A`
         );
-        setArticles(authorResponse.data.articles.creators.data);
-        setNavAuthor(authorResponse.data);
+        console.log(authorResponse.data.data.attributes.creators.data[0].attributes)
+        setArticles(authorResponse.data.data.attributes.creators.data);
+        setNavAuthor(authorResponse.data.data.attributes);
         const author2Response = await axios.get(
           "https://juicer-blogs.herokuapp.com/api/creators/2?populate=%2A"
         );
-        setInactiveArticles(author2Response.data.articles);
+        setInactiveArticles(author2Response.data.data.attributes.creators.data);
         setInactiveNavAuthor(author2Response.data);
       } catch (error) {}
     }
@@ -54,8 +55,8 @@ export default function GetInfo() {
           {articleList.map((a) => (
             <div key={a.id.toString()}>
               <PreviewPost
-                key={a.slug.toString()}
-                article={a}
+                key={a.attributes.slug.toString()}
+                article={a.attributes}
                 author={navAuthor}
               ></PreviewPost>
               <div className="read-btn-container">

@@ -11,7 +11,7 @@ export default function PreviewPost({ article, author }) {
         <img src={article.author.picture}></img>
       </div> */}
         <h6 className="article-author"> {author.name} </h6>
-        <h6 className="article-date"> {formatDate(article.published_at)} </h6>
+        <h6 className="article-date"> {formatDate(article.publishedAt)} </h6>
       </div>
       <h4 className="article-desc"> {article.description} </h4>
     </div>
