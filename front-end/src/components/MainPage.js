@@ -6,7 +6,6 @@ import "../styles/MainPage.css";
 import Nav from "./Nav";
 
 export default function GetInfo() {
-
   const [articleList, setArticles] = useState([]);
 
   const [navAuthor, setNavAuthor] = useState({});
@@ -19,20 +18,22 @@ export default function GetInfo() {
   useEffect(() => {
     async function fetchMyAPI() {
       try {
-        const authorResponse = await axios.get("https://juicer-blogs.herokuapp.com/api/creators/1");
-        setArticles(authorResponse.data.articles);
+        const authorResponse = await axios.get(
+          `https://juicer-blogs.herokuapp.com/api/creators/1?populate=%2A`
+        );
+        setArticles(authorResponse.data.articles.creators.data);
         setNavAuthor(authorResponse.data);
-        const author2Response = await axios.get("https://juicer-blogs.herokuapp.com/api/creators/2");
+        const author2Response = await axios.get(
+          "https://juicer-blogs.herokuapp.com/api/creators/2?populate=%2A"
+        );
         setInactiveArticles(author2Response.data.articles);
         setInactiveNavAuthor(author2Response.data);
-      } catch (error) {
-
-      }
+      } catch (error) {}
     }
     fetchMyAPI();
   }, []);
 
-  function switchAuthors(){
+  function switchAuthors() {
     const tempArticles = articleList;
     const tempAuthor = navAuthor;
     setArticles(inactiveArticles);
@@ -44,13 +45,27 @@ export default function GetInfo() {
   return (
     <>
       <div className="page-content">
-        <Nav author={navAuthor} switchAuthor={switchAuthors} articlePage={false}/>
+        <Nav
+          author={navAuthor}
+          switchAuthor={switchAuthors}
+          articlePage={false}
+        />
         <div className="article-list-container">
           {articleList.map((a) => (
             <div key={a.id.toString()}>
-              <PreviewPost key={a.slug.toString()} article={a} author={navAuthor}></PreviewPost>
+              <PreviewPost
+                key={a.slug.toString()}
+                article={a}
+                author={navAuthor}
+              ></PreviewPost>
               <div className="read-btn-container">
-              <Link className="read-btn"key={a.id.toString()}to={`/${a.slug}`}>Read More</Link>
+                <Link
+                  className="read-btn"
+                  key={a.id.toString()}
+                  to={`/${a.slug}`}
+                >
+                  Read More
+                </Link>
               </div>
             </div>
           ))}
