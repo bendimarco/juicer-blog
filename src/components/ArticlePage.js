@@ -18,12 +18,10 @@ export default function GetInfo() {
   // Fetch your articles immediately after the component is mounted
   useEffect(() => {
     async function fetchMyAPI() {
-      console.log(`slug: ${slug}`);
       try {
         const response = await axios.get(
-          `https://juicer-blogs.herokuapp.com/api/articles?populate=%2a&filters[slug][$eq]=sample`
+          `https://juicer-blogs.herokuapp.com/api/articles?populate=%2a&filters[slug][$eq]=${slug}`
         );
-        console.log(response.data.data);
         setArticle({ articles: response.data.data });
         setLoading(false);
       } catch (error) {
@@ -43,11 +41,11 @@ export default function GetInfo() {
   if (isLoading) {
     return <div></div>;
   }
-
+  console.log(article.attributes);
   return (
     <>
       <div className="page-content">
-        <Nav author={article} articlePage={true} />
+        <Nav author={article.attributes.creator.data.attributes} articlePage={true} />
         <div className="article-list-container">
           <button class="article-content" onClick={() => history.goBack()}>
             Back

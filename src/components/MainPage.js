@@ -21,7 +21,7 @@ export default function GetInfo() {
         const authorResponse = await axios.get(
           `https://juicer-blogs.herokuapp.com/api/creators/1?populate=%2A`
         );
-        // console.log(authorResponse.data.data.attributes.creators.data[0].attributes)
+        console.log(authorResponse.data.data.attributes)
         setArticles(authorResponse.data.data.attributes.creators.data);
         setNavAuthor(authorResponse.data.data.attributes);
         const author2Response = await axios.get(
@@ -63,7 +63,7 @@ export default function GetInfo() {
                 <Link
                   className="read-btn"
                   key={a.id.toString()}
-                  to={`/${a.slug}`}
+                  to={`/${a.attributes.slug}`}
                 >
                   Read More
                 </Link>
