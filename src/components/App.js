@@ -16,6 +16,9 @@ export default function App() {
     <div>
       <Router>
         <Switch>
+          <Route path="/juicer-blog-frontend" exact>
+            <MainPage />
+          </Route>
           <Route path="/" exact>
             <MainPage />
           </Route>
