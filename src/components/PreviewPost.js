@@ -3,7 +3,7 @@ import "../styles/MainPage.css"
 import { BrowserRouter as Router, Link } from "react-router-dom";
 
 export default function PreviewPost({ article, author }) {
-  console.log(article.slug);
+  // console.log(article.slug);
   return (
     <div className="post-preview">
       <Link className="article-title" to={`/${article.slug}`}> {article.title} </Link>

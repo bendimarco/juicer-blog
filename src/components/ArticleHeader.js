@@ -3,7 +3,6 @@ import "../styles/ArticlePage.css";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 
 export default function ArticleHeader({ article }) {
-  console.log(article.attributes.creator.data.attributes.name);
   return (
     <div className="post-preview">
       <h1 className="title"> {article.attributes.title} </h1>
