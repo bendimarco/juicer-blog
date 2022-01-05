@@ -1,19 +1,20 @@
 import React from "react";
-import "../styles/ArticlePage.css"
+import "../styles/MainPage.css"
 import { BrowserRouter as Router, Link } from "react-router-dom";
 
-export default function ArticleHeader({ article }) {
+export default function PreviewPost({ article, author }) {
+  console.log(article.slug);
   return (
     <div className="post-preview">
-      <h1 className="title"> {article.title} </h1>
-      <h4 className="desc"> {article.description} </h4>
-      <div className="author-date-container">
+      <Link className="article-title" to={`/${article.slug}`}> {article.title} </Link>
+      <div className="author-date-div">
       {/* <div className="pfp-container">
         <img src={article.author.picture}></img>
       </div> */}
-        <h6 className="author"> {article.author.name} </h6>
-        <h6 className="date"> {formatDate(article.published_at)} </h6>
+        <h6 className="article-author"> {author.name} </h6>
+        <h6 className="article-date"> {formatDate(article.publishedAt)} </h6>
       </div>
+      <h4 className="article-desc"> {article.description} </h4>
     </div>
   );
 }
