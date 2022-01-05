@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/juicer-blog/static/css/main.92f3510a.chunk.css",
-    "main.js": "/juicer-blog/static/js/main.683d8161.chunk.js",
-    "main.js.map": "/juicer-blog/static/js/main.683d8161.chunk.js.map",
+    "main.js": "/juicer-blog/static/js/main.d5d003ac.chunk.js",
+    "main.js.map": "/juicer-blog/static/js/main.d5d003ac.chunk.js.map",
     "runtime-main.js": "/juicer-blog/static/js/runtime-main.149f947c.js",
     "runtime-main.js.map": "/juicer-blog/static/js/runtime-main.149f947c.js.map",
     "static/js/2.481a12eb.chunk.js": "/juicer-blog/static/js/2.481a12eb.chunk.js",
@@ -19,6 +19,6 @@
     "static/js/runtime-main.149f947c.js",
     "static/js/2.481a12eb.chunk.js",
     "static/css/main.92f3510a.chunk.css",
-    "static/js/main.683d8161.chunk.js"
+    "static/js/main.d5d003ac.chunk.js"
   ]
 }
