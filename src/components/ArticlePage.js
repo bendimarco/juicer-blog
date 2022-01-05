@@ -41,7 +41,7 @@ export default function GetInfo() {
   if (isLoading) {
     return <div></div>;
   }
-  console.log(article.attributes);
+  
   return (
     <>
       <div className="page-content">
