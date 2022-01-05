@@ -43,6 +43,8 @@ export default function GetInfo() {
     setInactiveNavAuthor(tempAuthor);
   }
 
+
+
   return (
     <>
       <div className="page-content">
@@ -63,7 +65,7 @@ export default function GetInfo() {
                 <Link
                   className="read-btn"
                   key={a.id.toString()}
-                  to={`/${a.attributes.slug}`}
+                  to={`${process.env.PUBLIC_URL}/${a.attributes.slug}`}
                 >
                   Read More
                 </Link>

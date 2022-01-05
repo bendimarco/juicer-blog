@@ -16,16 +16,13 @@ export default function App() {
     <div>
       <Router>
         <Switch>
-          <Route path="/juicer-blog-frontend" exact>
-            <MainPage />
-          </Route>
-          <Route path="/" exact>
+          <Route path={`${process.env.PUBLIC_URL}/`} exact>
             <MainPage />
           </Route>
           {/* Note how these two routes are ordered. The more specific
             path="/contact/:id" comes before path="/contact" so that
             route will render when viewing an individual contact */}
-          <Route path="/:slug">
+          <Route path={`${process.env.PUBLIC_URL}/:slug`}>
             <ArticlePage />
           </Route>
         </Switch>

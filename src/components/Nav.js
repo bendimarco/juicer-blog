@@ -53,12 +53,12 @@ const Nav = ({ author, switchAuthor, articlePage }) => {
       )}
       <div className="navbar">
         <div className="nav-link-div">
-          <Link className="nav-link" to={`/`}>
+          <Link className="nav-link" to={`${process.env.PUBLIC_URL}/`}>
             Home
           </Link>
         </div>
         <div className="nav-link-div">
-          <Link className="nav-link" to={`/about`}>
+          <Link className="nav-link" to={`${process.env.PUBLIC_URL}/about`}>
             About
           </Link>
         </div>

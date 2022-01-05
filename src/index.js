@@ -6,7 +6,7 @@ import { BrowserRouter as Router} from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-  <Router>
+  <Router basename="juicer-blog-frontend">
     <App />
   </Router>,
   document.getElementById('root')
