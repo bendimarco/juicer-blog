@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/juicer-blog-frontend/static/css/main.aad3833a.chunk.css",
-    "main.js": "/juicer-blog-frontend/static/js/main.b5e4f65e.chunk.js",
-    "main.js.map": "/juicer-blog-frontend/static/js/main.b5e4f65e.chunk.js.map",
-    "runtime-main.js": "/juicer-blog-frontend/static/js/runtime-main.56346d4a.js",
-    "runtime-main.js.map": "/juicer-blog-frontend/static/js/runtime-main.56346d4a.js.map",
-    "static/js/2.792c224b.chunk.js": "/juicer-blog-frontend/static/js/2.792c224b.chunk.js",
-    "static/js/2.792c224b.chunk.js.map": "/juicer-blog-frontend/static/js/2.792c224b.chunk.js.map",
-    "static/js/3.d6e16159.chunk.js": "/juicer-blog-frontend/static/js/3.d6e16159.chunk.js",
-    "static/js/3.d6e16159.chunk.js.map": "/juicer-blog-frontend/static/js/3.d6e16159.chunk.js.map",
-    "index.html": "/juicer-blog-frontend/index.html",
-    "static/css/main.aad3833a.chunk.css.map": "/juicer-blog-frontend/static/css/main.aad3833a.chunk.css.map",
-    "static/js/2.792c224b.chunk.js.LICENSE.txt": "/juicer-blog-frontend/static/js/2.792c224b.chunk.js.LICENSE.txt",
-    "static/media/ben-pfp.7f37dab0.png": "/juicer-blog-frontend/static/media/ben-pfp.7f37dab0.png",
-    "static/media/switch-author.e12d3005.svg": "/juicer-blog-frontend/static/media/switch-author.e12d3005.svg"
+    "main.css": "/juicer-blog/static/css/main.92f3510a.chunk.css",
+    "main.js": "/juicer-blog/static/js/main.683d8161.chunk.js",
+    "main.js.map": "/juicer-blog/static/js/main.683d8161.chunk.js.map",
+    "runtime-main.js": "/juicer-blog/static/js/runtime-main.149f947c.js",
+    "runtime-main.js.map": "/juicer-blog/static/js/runtime-main.149f947c.js.map",
+    "static/js/2.481a12eb.chunk.js": "/juicer-blog/static/js/2.481a12eb.chunk.js",
+    "static/js/2.481a12eb.chunk.js.map": "/juicer-blog/static/js/2.481a12eb.chunk.js.map",
+    "static/js/3.d6e16159.chunk.js": "/juicer-blog/static/js/3.d6e16159.chunk.js",
+    "static/js/3.d6e16159.chunk.js.map": "/juicer-blog/static/js/3.d6e16159.chunk.js.map",
+    "index.html": "/juicer-blog/index.html",
+    "static/css/main.92f3510a.chunk.css.map": "/juicer-blog/static/css/main.92f3510a.chunk.css.map",
+    "static/js/2.481a12eb.chunk.js.LICENSE.txt": "/juicer-blog/static/js/2.481a12eb.chunk.js.LICENSE.txt",
+    "static/media/ben-pfp.7f37dab0.png": "/juicer-blog/static/media/ben-pfp.7f37dab0.png",
+    "static/media/switch-author.e12d3005.svg": "/juicer-blog/static/media/switch-author.e12d3005.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.56346d4a.js",
-    "static/js/2.792c224b.chunk.js",
-    "static/css/main.aad3833a.chunk.css",
-    "static/js/main.b5e4f65e.chunk.js"
+    "static/js/runtime-main.149f947c.js",
+    "static/js/2.481a12eb.chunk.js",
+    "static/css/main.92f3510a.chunk.css",
+    "static/js/main.683d8161.chunk.js"
   ]
 }
