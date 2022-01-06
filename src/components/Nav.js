@@ -4,9 +4,11 @@ import "../styles/Nav.css";
 import switchIcon from "../images/switch-author.svg";
 import adit from "../images/Adit Bala.png";
 import ben from "../images/Ben DiMarco.png";
+import both from "../images/adit-and-ben.png";
 
 const Nav = ({ author, switchAuthor, articlePage }) => {
-  const a = author.name === "Adit Bala" ? adit : ben;
+  var a = author.name === "Adit Bala" ? adit : ben;
+  a = author.name === "Adit and Ben" ? both : a;
   const b = a === adit ? ben : adit;
   return (
     <div className="sidebar-container">
