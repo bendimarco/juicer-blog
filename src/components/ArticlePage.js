@@ -41,11 +41,13 @@ export default function GetInfo() {
   if (isLoading) {
     return <div></div>;
   }
-  
   return (
     <>
       <div className="page-content">
-        <Nav author={article.attributes.creator.data.attributes} articlePage={true} />
+        <Nav
+          author={article.attributes.creator.data.attributes}
+          articlePage={true}
+        />
         <div className="article-list-container">
           <button class="article-content" onClick={() => history.goBack()}>
             Back
