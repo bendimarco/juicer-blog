@@ -54,7 +54,7 @@ export default function GetInfo() {
           </button>
           <ArticleHeader article={article}></ArticleHeader>
           <div className="article-content">
-            <MarkdownView markdown={article.attributes.body} />
+            <MarkdownView markdown={article.attributes.body} options={{ emoji: true }}/>
           </div>
         </div>
       </div>
