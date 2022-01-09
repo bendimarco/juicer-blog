@@ -23,16 +23,20 @@ export default function GetInfo() {
           `https://juicer-blogs.herokuapp.com/api/creators/1?populate=%2A`
         );
         // console.log(authorResponse.data.data.attributes)
-        setArticles(authorResponse.data.data.attributes.creators.data);
-        setNavAuthor(authorResponse.data.data.attributes);
         const author2Response = await axios.get(
           "https://juicer-blogs.herokuapp.com/api/creators/2?populate=%2A"
         );
-        setInactiveArticles(author2Response.data.data.attributes.creators.data);
-        setInactiveNavAuthor(author2Response.data.data.attributes);
+        return [authorResponse, author2Response];
       } catch (error) {}
     }
-    fetchMyAPI();
+    fetchMyAPI().then((result) => {
+      let active = result[0],
+        inactive = result[1];
+      setArticles(active.data.data.attributes.creators.data);
+      setNavAuthor(active.data.data.attributes);
+      setInactiveArticles(inactive.data.data.attributes.creators.data);
+      setInactiveNavAuthor(inactive.data.data.attributes);
+    });
   }, []);
 
   function switchAuthors() {
