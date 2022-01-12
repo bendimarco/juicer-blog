@@ -20,14 +20,21 @@ export default function GetInfo() {
     async function fetchMyAPI() {
       try {
         const authorResponse = await axios.get(
-          `https://juicer-blogs.herokuapp.com/api/creators/1?populate=%2A`
+          `https://juicer-blogs.herokuapp.com/api/creators/1?populate=%2A`,
+          { timeout: 10000 }
         );
-        // console.log(authorResponse.data.data.attributes)
+        console.log(authorResponse);
         const author2Response = await axios.get(
-          "https://juicer-blogs.herokuapp.com/api/creators/2?populate=%2A"
+          "https://juicer-blogs.herokuapp.com/api/creators/2?populate=%2A",
+          { timeout: 10000 }
         );
+        console.log([authorResponse, author2Response]);
         return [authorResponse, author2Response];
-      } catch (error) {}
+      } catch (error) {
+        console.log(error.code);
+        console.log(error.message);
+        console.log(error.stack);
+      }
     }
     fetchMyAPI().then((result) => {
       let active = result[0],
