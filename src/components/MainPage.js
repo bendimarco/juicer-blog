@@ -5,7 +5,6 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "../styles/MainPage.css";
 import Nav from "./Nav";
 import ArticleBuffer from "./ArticleBuffer";
-import * as ReactBootStrapi from "react-bootstrap";
 
 export default function GetInfo() {
   const [articleList, setArticles] = useState([]);
@@ -65,7 +64,9 @@ export default function GetInfo() {
           switchAuthors={switchAuthors}
         />
       ) : (
-        <ReactBootStrapi.Spinner animation="border" />
+        <div class="spinner-border" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
       )}
     </div>
   );
