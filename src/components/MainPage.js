@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "../styles/MainPage.css";
 import Nav from "./Nav";
 import ArticleBuffer from "./ArticleBuffer";
+import anime from "animejs";
 
 export default function GetInfo() {
   const [articleList, setArticles] = useState([]);
@@ -16,6 +17,21 @@ export default function GetInfo() {
   const [inactiveNavAuthor, setInactiveNavAuthor] = useState({});
 
   const [loading, setLoading] = useState(false);
+
+  const animationRef = React.useRef(null);
+
+  useEffect(() => {
+    animationRef.current = anime({
+      targets: ".loading",
+      translateX: 250,
+      delay: function (el, i) {
+        return i * 100;
+      },
+      loop: true,
+      direction: "alternate",
+      easing: "easeInOutSine",
+    });
+  }, []);
 
   // Fetch your articles immediately after the component is mounted
   useEffect(() => {
@@ -64,9 +80,7 @@ export default function GetInfo() {
           switchAuthors={switchAuthors}
         />
       ) : (
-        <div class="spinner-border" role="status">
-          <span class="sr-only">Loading...</span>
-        </div>
+        <div className="el" />
       )}
     </div>
   );
