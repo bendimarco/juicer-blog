@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "../styles/MainPage.css";
 import Nav from "./Nav";
 import ArticleBuffer from "./ArticleBuffer";
+import * as ReactBootStrapi from "react-bootstrap";
 
 export default function GetInfo() {
   const [articleList, setArticles] = useState([]);
@@ -15,20 +16,20 @@ export default function GetInfo() {
 
   const [inactiveNavAuthor, setInactiveNavAuthor] = useState({});
 
+  const [loading, setLoading] = useState(false);
+
   // Fetch your articles immediately after the component is mounted
   useEffect(() => {
     async function fetchMyAPI() {
       try {
         const authorResponse = await axios.get(
-          `https://juicer-blogs.herokuapp.com/api/creators/1?populate=%2A`,
-          { timeout: 10000 }
+          `https://juicer-blogs.herokuapp.com/api/creators/1?populate=%2A`
         );
         console.log(authorResponse);
         const author2Response = await axios.get(
-          "https://juicer-blogs.herokuapp.com/api/creators/2?populate=%2A",
-          { timeout: 10000 }
+          "https://juicer-blogs.herokuapp.com/api/creators/2?populate=%2A"
         );
-        console.log([authorResponse, author2Response]);
+        setLoading(true);
         return [authorResponse, author2Response];
       } catch (error) {
         console.log(error.code);
@@ -56,10 +57,16 @@ export default function GetInfo() {
   }
 
   return (
-    <ArticleBuffer
-      navAuthor={navAuthor}
-      articleList={articleList}
-      switchAuthors={switchAuthors}
-    />
+    <div>
+      {loading ? (
+        <ArticleBuffer
+          navAuthor={navAuthor}
+          articleList={articleList}
+          switchAuthors={switchAuthors}
+        />
+      ) : (
+        <ReactBootStrapi.Spinner animation="border" />
+      )}
+    </div>
   );
 }
