@@ -16,7 +16,7 @@ const ArticleBuffer =({navAuthor, articleList, switchAuthors}) => {
               articlePage={false}
             />
             <div className="article-list-container">
-              {articleList.map((a) => (
+              {articleList.slice(0).reverse().map((a) => (
                 <div key={a.id.toString()}>
                   <PreviewPost
                     key={a.attributes.slug.toString()}
