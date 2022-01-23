@@ -24,12 +24,11 @@ export default function GetInfo() {
     animationRef.current = anime({
       targets: ".loading",
       translateX: 250,
-      delay: function (el, i) {
-        return i * 100;
-      },
+      scale: 2,
+      backgroundColor: "#FFF",
+      borderRadius: ["0%", "50%"],
       loop: true,
-      direction: "alternate",
-      easing: "easeInOutSine",
+      easing: 'steps(5)'
     });
   }, []);
 
@@ -80,7 +79,7 @@ export default function GetInfo() {
           switchAuthors={switchAuthors}
         />
       ) : (
-        <div className="el" />
+        <div className="loading" />
       )}
     </div>
   );
