@@ -22,13 +22,17 @@ export default function GetInfo() {
 
   useEffect(() => {
     animationRef.current = anime({
-      targets: ".loading",
-      translateX: 250,
-      scale: 2,
-      backgroundColor: "#FFF",
-      borderRadius: ["0%", "50%"],
+      targets: '.loading, .loading2, .loading3',
+      scale: [
+        {value: .1, easing: 'easeOutSine', duration: 500},
+        {value: 1, easing: 'easeInOutQuad', duration: 1200}
+      ],
+      delay: anime.stagger(200, {grid: [14, 5], from: 'center'}),
+      // translateX: 250,
+      // delay: function(el, i) { return i * 100; },
+      // direction: 'alternate',
       loop: true,
-      easing: 'steps(5)'
+      // easing: 'easeInOutSine'
     });
   }, []);
 
@@ -79,7 +83,11 @@ export default function GetInfo() {
           switchAuthors={switchAuthors}
         />
       ) : (
-        <div className="loading" />
+        <div className="loading-div">
+          <div className="loading" />
+          <div className="loading2" />
+          <div className="loading3" />
+        </div>
       )}
     </div>
   );
