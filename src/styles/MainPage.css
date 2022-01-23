@@ -92,7 +92,9 @@
 }
 
 .loading {
-  height: 16px;
-  width: 16px;
-  background-color: green;
+  position: relative;
+  height: 24px;
+  width: 24px;
+  background-color: black;
 }
+
