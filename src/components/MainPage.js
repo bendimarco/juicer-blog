@@ -22,16 +22,21 @@ export default function GetInfo() {
 
   useEffect(() => {
     animationRef.current = anime({
-      targets: '.loading, .loading2, .loading3',
-      scale: [
-        {value: .1, easing: 'easeOutSine', duration: 500},
-        {value: 1, easing: 'easeInOutQuad', duration: 1200}
-      ],
-      delay: anime.stagger(200, {grid: [14, 5], from: 'center'}),
+      targets: ".loading, .loading2, .loading3",
+      translateX: "13rem",
+      rotate: 180,
+      borderRadius: "8px",
+      duration: 2000,
+      loop: true,
+      // scale: [
+      //   { value: 0.1, easing: "easeOutSine", duration: 500 },
+      //   { value: 1, easing: "easeInOutQuad", duration: 1200 },
+      // ],
+      // delay: anime.stagger(200, { grid: [14, 5], from: "center" }),
       // translateX: 250,
       // delay: function(el, i) { return i * 100; },
       // direction: 'alternate',
-      loop: true,
+      // loop: true,
       // easing: 'easeInOutSine'
     });
   }, []);
