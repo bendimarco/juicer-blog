@@ -18,25 +18,32 @@ export default function GetInfo() {
 
   const [loading, setLoading] = useState(false);
 
+  const captions = [
+    "[Juicing out content]",
+    "[Building out thoughts]",
+    "[Contructing the philosophies of life]",
+  ];
+  const random = Math.floor(Math.random() * captions.length);
+
   const animationRef = React.useRef(null);
 
   useEffect(() => {
     animationRef.current = anime({
       targets: ".loading, .loading2, .loading3",
-      translateX: "13rem",
-      rotate: 180,
-      borderRadius: "8px",
-      duration: 2000,
-      loop: true,
-      // scale: [
-      //   { value: 0.1, easing: "easeOutSine", duration: 500 },
-      //   { value: 1, easing: "easeInOutQuad", duration: 1200 },
-      // ],
-      // delay: anime.stagger(200, { grid: [14, 5], from: "center" }),
+      // translateX: "13rem",
+      // rotate: 180,
+      // borderRadius: "8px",
+      // duration: 2000,
+      // loop: true,
+      scale: [
+        { value: 0.1, easing: "easeOutSine", duration: 500 },
+        { value: 1, easing: "easeInOutQuad", duration: 1200 },
+      ],
+      delay: anime.stagger(200, { grid: [14, 5], from: "center" }),
       // translateX: 250,
       // delay: function(el, i) { return i * 100; },
-      // direction: 'alternate',
-      // loop: true,
+      direction: "reverse",
+      loop: true,
       // easing: 'easeInOutSine'
     });
   }, []);
@@ -88,10 +95,13 @@ export default function GetInfo() {
           switchAuthors={switchAuthors}
         />
       ) : (
-        <div className="loading-div">
-          <div className="loading" />
-          <div className="loading2" />
-          <div className="loading3" />
+        <div>
+          <div className="loading-div">
+            <div className="loading" />
+            <div className="loading2" />
+            <div className="loading3" />
+          </div>
+          <div className="loadingCaption">{captions[random]}</div>
         </div>
       )}
     </div>
